@@ -27,9 +27,11 @@ const CodeDivision = (props) => {
         }).catch(()=>{console.log("could not delete")})
     }
 
+    const title=props.codeArray.code_title.charAt(0).toUpperCase() + props.codeArray.code_title.slice(1);
+
     return (
         <div className="ml-64 mr-4 rounded-xl py-6 px-4 block text-white" style={{ backgroundColor: "#0a0024", }}>
-            <h2 className="text-center text-lg ">{props.codeArray.code_title}</h2>
+            <h2 className="text-center text-lg ">{title}</h2>
             <div className="flex flex-row justify-between py-2">
                 <div className="w-3/4 font-normal">
                     <pre className="prettyprint text-lime-400">

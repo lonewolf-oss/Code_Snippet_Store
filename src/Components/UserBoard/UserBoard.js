@@ -47,8 +47,13 @@ const UserBoard = () => {
         time=false;
         return (
             <div className="min-h-screen font-bold">
-                <div className="block fixed top-0 left-0 right-0 text-white py-2" style={{ backgroundColor: "#0a0024" }}>
-                    <span className="inline-block px-4 float-right text-amber-400 text-lg text-center">Hi {username2+"..."} </span>
+                <div className="flex justify-between items-center fixed top-0 left-0 right-0 text-white py-1" style={{ backgroundColor: "#0a0024" }}>
+                    <div>
+                    <span className="inline-block px-4 text-amber-400 text-lg text-center">Hi {username2+"..."} </span>
+                    </div>
+                    <div className="px-2 text-sm font-semibold">
+                        <button className="border-2 border-black rounded-lg px-4 py-1 bg-red-600">LOG OUT</button>
+                    </div>
                 </div>
                 <Link to='/createpage' >
                 <div className="fixed right-4 bottom-2 bg-amber-400 rounded-3xl hover:bg-amber-500 hover:scale-105 transition-all hover:cursor-pointer duration-300 z-10">

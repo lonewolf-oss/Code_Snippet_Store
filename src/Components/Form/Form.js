@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUserAction } from '../../Redux/Actions/actCreators';
 import lgimf from '../Assets/loginForm3.png'
-import state from '../../Redux/State/state'
 import { Link } from 'react-router-dom';
 
 
 const Form = () => {
 
-    const [uname, setname] = useState("");
+    const [u_name, setname] = useState("");
     const [umail, setmail] = useState("");
     const [upass, setpass] = useState("");
 
     const dispatch = useDispatch();
-    const usesel = useSelector(state => state.isLogged);
 
     async function registerUser(event) {
+
+        const uname=u_name.toLowerCase();
 
         event.preventDefault();
 
@@ -31,7 +31,7 @@ const Form = () => {
                     upass,
                 }
             ),
-        }).then(() => { dispatch(registerUserAction(uname, umail, upass)); }).catch((err) => { console.log("error occured") });
+        }).then(() => { dispatch(registerUserAction(uname.toLowerCase(), umail, upass)); }).catch((err) => { console.log("error occured") });
 
     }
 
@@ -42,7 +42,7 @@ const Form = () => {
                 <form onSubmit={registerUser} className='w-4/6 m-auto' >
                     <fieldset className='border-2 text-xl border-black p-4 rounded-lg mb-8'>
                         <legend ><label for="user_name" className='px-1' >User Name</label></legend>
-                        <input type="text" id='user_name' name='user_name' placeholder='Name' className='text-lg border-b focus:outline-0 border-black p-2 bg-transparent' value={uname} onChange={(e) => { setname(e.target.value) }} />
+                        <input type="text" id='user_name' name='user_name' placeholder='Name' className='text-lg border-b focus:outline-0 border-black p-2 bg-transparent' value={u_name} onChange={(e) => { setname(e.target.value) }} />
                     </fieldset>
                     <fieldset className='text-xl border-2 border-black p-4 rounded-lg mb-8'>
                         <legend ><label for="user_email" className='px-1'>Email Address</label></legend>
