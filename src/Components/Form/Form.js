@@ -31,7 +31,7 @@ const Form = () => {
                     upass,
                 }
             ),
-        }).then(() => { dispatch(registerUserAction(uname.toLowerCase(), umail, upass)); }).catch((err) => { console.log("error occured") });
+        }).then(() => { dispatch(registerUserAction(uname.toLowerCase(), umail, upass,true)); }).catch((err) => { console.log("error occured") });
 
     }
 
@@ -41,15 +41,15 @@ const Form = () => {
             <div className='pb-16 pt-20 font-bold text-black'>
                 <form onSubmit={registerUser} className='w-4/6 m-auto' >
                     <fieldset className='border-2 text-xl border-black p-4 rounded-lg mb-8'>
-                        <legend ><label for="user_name" className='px-1' >User Name</label></legend>
+                        <legend ><label htmlFor="user_name" className='px-1' >User Name</label></legend>
                         <input type="text" id='user_name' name='user_name' placeholder='Name' className='text-lg border-b focus:outline-0 border-black p-2 bg-transparent' value={u_name} onChange={(e) => { setname(e.target.value) }} />
                     </fieldset>
                     <fieldset className='text-xl border-2 border-black p-4 rounded-lg mb-8'>
-                        <legend ><label for="user_email" className='px-1'>Email Address</label></legend>
+                        <legend ><label htmlFor="user_email" className='px-1'>Email Address</label></legend>
                         <input type="email" id='user_email' name='user_email' placeholder='Email-address' className='text-lg bg-transparent border-b border-black focus:outline-0 p-2' value={umail} onChange={(e) => { setmail(e.target.value) }} />
                     </fieldset>
                     <fieldset className='text-xl border-2 border-black p-4 rounded-lg'>
-                        <legend ><label for="user_pass" className='px-1'>Password</label></legend>
+                        <legend ><label htmlFor="user_pass" className='px-1'>Password</label></legend>
                         <input type="password" id='user_pass' name='user_pass' placeholder='Password' className='text-lg bg-transparent border-b border-black focus:outline-0 p-2' value={upass} onChange={(e) => { setpass(e.target.value) }} />
                     </fieldset>
                     {

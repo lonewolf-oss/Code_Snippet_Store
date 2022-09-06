@@ -7,7 +7,7 @@ export const reducer=(state=initialstate,action)=>{
             user_name:action.uname,
             user_mail:action.umail,
             user_pass:action.upass,
-            isLogged:true
+            isLogged:action.log
         }
 
         default :  return state;

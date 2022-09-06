@@ -18,10 +18,6 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("HELO WORLD");
-})
-
 app.post('/api/register', async (req, res) => {
 
     const check=await UserDataCollection.exists({user_name:req.body.uname});
@@ -37,13 +33,9 @@ app.post('/api/register', async (req, res) => {
     
             const result = await user.save();
         }
-        else{
-            console.log("USER ALREADY EXISTS")
-        }
         res.json({ status: 'ok' });
     }
     catch (err) {
-        console.log("Could not create user");
         res.json({ status: 'error', error: "Error Occured" });
     }
     

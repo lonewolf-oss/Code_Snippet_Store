@@ -17,7 +17,9 @@ const Navbar=()=>{
                 <ul className='list-none font-bold text-md text-white '>
                     <li className='home_link inline-block w-1/4'><a href='#' className='inline-block hover:scale-90 transition-scale duration-100'>HOME</a></li>
                     <li className='about_link inline-block w-1/4'><a href='#' className='inline-block hover:scale-90 transition-scale duration-100'>ABOUT</a></li>
-                    <li className='inline-block w-1/4'><button className='px-4 py-2 rounded-xl bg-amber-300 text-black hover:bg-amber-400 transition-bg duration-300'>{ !useSelector(state=>state.isLogged)?<Link to='/login'>LOG IN</Link>:<Link to='/userpage'>GO TO DASHBOARD</Link>}</button></li>
+                    <li className='inline-block w-1/4'>
+                    { !useSelector(state=>state.isLogged)?<Link to='/login'><button className='px-4 py-2 rounded-xl bg-amber-300 text-black hover:bg-amber-400 transition-bg duration-300'>LOG IN</button></Link>:<Link to='/userpage'><button className='px-4 py-2 rounded-xl bg-amber-300 text-black hover:bg-amber-400 transition-bg duration-300'>GO TO DASHBOARD</button></Link>}
+                    </li>
                 </ul>
             </div>
         </nav>

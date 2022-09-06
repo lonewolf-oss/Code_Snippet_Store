@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CodeSection from "./CodeSection";
 import NoCode from "./NoCode";
 import SideNavBar from "./SideNavBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import plus from '../Assets/plus.png'
 import Loader from "../Loader/Loader";
+import { registerUserAction } from "../../Redux/Actions/actCreators";
+
 
 const UserBoard = () => {
 
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
     const username1 = useSelector(state => state.user_name);
     const username2 = username1.charAt(0).toUpperCase() + username1.slice(1);
     const [userDataArray, setUserData] = useState([]);
@@ -27,7 +31,10 @@ const UserBoard = () => {
         }
         , [deleted]);
 
-    console.log(userDataArray);
+    const logOutFun=()=>{
+        dispatch(registerUserAction("","","",false));
+        navigate('/');
+    }
 
 
     const del=(val)=>{
@@ -52,7 +59,7 @@ const UserBoard = () => {
                     <span className="inline-block px-4 text-amber-400 text-lg text-center">Hi {username2+"..."} </span>
                     </div>
                     <div className="px-2 text-sm font-semibold">
-                        <button className="border-2 border-black rounded-lg px-4 py-1 bg-red-600">LOG OUT</button>
+                        <button onClick={logOutFun} className="border-2 border-black rounded-lg px-4 py-1 bg-red-600 hover:bg-red-700 transition-bg duration-300">LOG OUT</button>
                     </div>
                 </div>
                 <Link to='/createpage' >
