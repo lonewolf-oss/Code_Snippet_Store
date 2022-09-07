@@ -30,7 +30,7 @@ const CodeDivision = (props) => {
     const title=props.codeArray.code_title.charAt(0).toUpperCase() + props.codeArray.code_title.slice(1);
 
     return (
-        <div className="ml-64 mr-4 rounded-xl py-6 px-4 block text-white" style={{ backgroundColor: "#0a0024", }}>
+        <div className="ml-72 mr-4 rounded-xl py-6 px-4 block text-white" style={{ backgroundColor: "#0a0024", }}>
             <h2 className="text-center text-lg ">{title}</h2>
             <div className="flex flex-row justify-between py-2">
                 <div className="w-3/4 font-normal">
@@ -39,8 +39,8 @@ const CodeDivision = (props) => {
                     </pre>
                 </div>
                 <div className="flex flex-col justify-center px-24 w-80" style={{ color: "#001524" }}>
-                    <button onClick={copyFunction} className="block mt-4 active:bg-lime-300 border-2 border-black hover:border-amber-500 transition-border duration-200 px-5 py-1 rounded-lg bg-amber-400">COPY</button>
-                    <button onClick={deleteFunction} className="block mt-4 border-2 border-black hover:border-amber-500 transition-border duration-200 px-5 py-1 rounded-lg bg-amber-400">DELETE</button>
+                    <button onClick={copyFunction} className="block mt-4 active:bg-lime-400 border-2 border-black hover:border-amber-500 transition-border duration-200 px-5 py-1 rounded-lg bg-amber-400">COPY</button>
+                    <button onClick={deleteFunction} className="block mt-4 border-2 border-black hover:border-amber-500 transition-border duration-200 px-5 py-1 rounded-lg bg-amber-400 active:bg-red-400">DELETE</button>
                 </div>
             </div>
         </div>

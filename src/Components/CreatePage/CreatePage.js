@@ -29,7 +29,7 @@ const CreatePage = () => {
     }
 
     return (
-        <div className="block min-h-screen py-2 border-l-8 border-r-8 border-amber-400" style={{ borderLeft: "32px solid #0a0024", borderRight: "32px solid #0a0024" }}>
+        <div className="block min-h-screen py-2">
             <form onSubmit={createData} className="block w-3/4 mx-auto">
                 <div className="block py-4 w-3/4 mx-auto">
                     <label htmlFor="title" className="block text-xl font-bold my-3" >Code Title</label>

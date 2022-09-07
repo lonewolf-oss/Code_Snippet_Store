@@ -55,8 +55,8 @@ const UserBoard = () => {
         return (
             <div className="min-h-screen font-bold">
                 <div className="flex justify-between items-center fixed top-0 left-0 right-0 text-white py-1" style={{ backgroundColor: "#0a0024" }}>
-                    <div>
-                    <span className="inline-block px-4 text-amber-400 text-lg text-center">Hi {username2+"..."} </span>
+                    <div className="">
+                    <span className="inline-block px-8 text-amber-400 text-lg text-center">Hi {username2+"..."} </span>
                     </div>
                     <div className="px-2 text-sm font-semibold">
                         <button onClick={logOutFun} className="border-2 border-black rounded-lg px-4 py-1 bg-red-600 hover:bg-red-700 transition-bg duration-300">LOG OUT</button>
