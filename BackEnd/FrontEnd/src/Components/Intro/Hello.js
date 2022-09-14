@@ -2,6 +2,7 @@ import React from "react"
 import codesrc from '../Assets/c++hellocode.png'
 import './hello.css'
 import langs from '../Assets/langs.png'
+import Steps from "./Steps"
 
 const Hello=()=>{
     return(
@@ -24,7 +25,17 @@ const Hello=()=>{
             </div>
         </section>
         <section className="py-48" >
-            <h2 className="text-center text-7xl font-bold ">Don't Worry!! We have a solution...</h2>
+            <h2 className="text-center text-5xl font-bold ">Don't Worry!! We have a solution...</h2>
+        </section>
+        <section className="flex justify-center items-center">
+            {
+                <Steps />
+            }
+        </section>
+        <section className="block pt-4" > 
+            <div className="block text-center p-4">
+                <a title="Github Repository" target="_blank" href="https://github.com/SaurabhKandale/Code_Snippet_Store" className="font-semibold">© SaurabhKandale</a>
+            </div>
         </section>
         </>
     )

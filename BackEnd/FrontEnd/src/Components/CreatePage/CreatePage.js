@@ -13,7 +13,7 @@ const CreatePage = () => {
     async function createData(event) {
 
         event.preventDefault();
-        const response = await fetch('http://localhost:5000/api/createData', {
+        const response = await fetch('/api/createData', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

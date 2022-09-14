@@ -22,7 +22,7 @@ const UserBoard = () => {
         () => {
             async function getdata() {
 
-                const response = await fetch(`http://localhost:5000/api/getdata?username=${username1}`);
+                const response = await fetch(`/api/getdata?username=${username1}`);
                 const data = await response.json();
                 setUserData(data.dataFromUser[0].user_code);
             }

@@ -10,7 +10,7 @@ const CodeDivision = (props) => {
     }
 
     const deleteFunction=async ()=>{
-        await fetch('http://localhost:5000/api/deleteContent',{
+        await fetch('/api/deleteContent',{
             method:'PATCH',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

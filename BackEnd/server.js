@@ -13,7 +13,7 @@ mongoose.connect(`mongodb+srv://Saurabh:${mypass}@cssdb.my2snqz.mongodb.net/?ret
 
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -58,6 +58,10 @@ app.get('/api/getdata',async (req,res)=>{
     // console.log(dataFromUser);
     return res.json({dataFromUser});
 });
+
+if(process.env.NODE_ENV=="production"){
+    app.use(express.static('FrontEnd/build'));
+}
 
 app.listen(port, () => {
     console.log(`Server is running on port : ${port}`)
